@@ -1,6 +1,5 @@
 import {BuildOptions} from "./types/config";
 import webpack from "webpack";
-import path from "path";
 import {buildLoaders} from "./buildLoaders";
 import {buildResolvers} from "./buildResolvers";
 import {buildPlugins} from "./buildPlugins";
@@ -20,7 +19,7 @@ export function buildWebpackConfig(options: BuildOptions) : webpack.Configuratio
         module: {
             rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         plugins: buildPlugins(paths.html),
         devtool: isDev ? 'source-map' : undefined,
         devServer: isDev ? buildDevServerConfig(options) : undefined
