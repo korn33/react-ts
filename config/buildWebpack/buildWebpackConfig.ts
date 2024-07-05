@@ -20,7 +20,7 @@ export function buildWebpackConfig(options: BuildOptions) : webpack.Configuratio
             rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
-        plugins: buildPlugins(paths.html),
+        plugins: buildPlugins(paths.html, isDev),
         devtool: isDev ? 'source-map' : undefined,
         devServer: isDev ? buildDevServerConfig(options) : undefined
     }
