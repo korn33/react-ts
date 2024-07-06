@@ -1,5 +1,6 @@
 {
   "localization_button": "рус",
   "link_main_page": "Main",
-  "link_about_page": "About"
+  "link_about_page": "About",
+  "page_not_found": "Page not found"
 }

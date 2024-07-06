@@ -1,5 +1,6 @@
 {
   "localization_button": "eng",
   "link_main_page": "Главная",
-  "link_about_page": "О сайте"
+  "link_about_page": "О сайте",
+  "page_not_found": "Страница не найдена"
 }

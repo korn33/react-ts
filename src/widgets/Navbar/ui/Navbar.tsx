@@ -3,7 +3,6 @@ import {classNames} from "shared/lib/classNames";
 import cls from './Navbar.module.scss'
 import {AppRoutes, RoutePath} from "shared/config/routeConfig";
 import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import {useTranslation} from "react-i18next";
 
 interface NavbarProps {
