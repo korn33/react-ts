@@ -2,5 +2,8 @@
   "localization_button": "рус",
   "link_main_page": "Main",
   "link_about_page": "About",
-  "page_not_found": "Page not found"
+  "page_not_found": "Page not found",
+  "error_message": "Something went wrong",
+  "reload_page": "Reload",
+  "throw_test_button": "Show error"
 }
