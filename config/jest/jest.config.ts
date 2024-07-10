@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path";
+
 export default {
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
@@ -55,7 +57,8 @@ export default {
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 
   moduleNameMapper: {
-    '\\.(css|scss)$': 'identity-obj-proxy'
+    '\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.(svg)': path.resolve(__dirname, 'jestMockComponent.tsx')
   },
 
   // All imported modules in your tests should be mocked automatically
