@@ -48,6 +48,16 @@ export default {
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
 
+  modulePaths: [
+    "<rootDir>src"
+  ],
+
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+
+  moduleNameMapper: {
+    '\\.(css|scss)$': 'identity-obj-proxy'
+  },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
