@@ -10,21 +10,9 @@ interface NavbarProps {
 }
 
 export const Navbar = ({className}: NavbarProps) => {
-    const {t} = useTranslation()
-
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={cls.links}>
-                <AppLink
-                    to={RoutePath[AppRoutes.MAIN]}
-                    className={cls.mainLink}
-                    theme={AppLinkTheme.PRIMARY}
-                >{t('link_main_page')}</AppLink>
-                <AppLink
-                    to={RoutePath[AppRoutes.ABOUT]}
-                    theme={AppLinkTheme.SECONDARY}
-                >{t('link_about_page')}</AppLink>
-            </div>
+
         </div>
     );
 };

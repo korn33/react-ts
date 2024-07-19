@@ -4,10 +4,11 @@ import {AppButton, ThemeButtonApp} from "shared/ui/AppButton/AppButton";
 import {useTranslation} from "react-i18next";
 
 interface LocalizationSwitcherProps {
-    className?: string
+    className?: string,
+    short: boolean
 }
 
-export const LocalizationSwitcher = ({className}: LocalizationSwitcherProps) => {
+export const LocalizationSwitcher = ({className, short}: LocalizationSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggle = async () => {
@@ -19,6 +20,6 @@ export const LocalizationSwitcher = ({className}: LocalizationSwitcherProps) => 
                 onClick={toggle}
                 className={classNames(cls.LocalizationSwitcher, {}, [className])}
                 theme={ThemeButtonApp.CLEAR}
-            >{t('localization_button')}</AppButton>
+            >{short ? t('localization_button_short') : t('localization_button_long')}</AppButton>
     );
 };

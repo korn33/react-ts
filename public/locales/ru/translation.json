@@ -1,9 +1,10 @@
 {
-  "localization_button": "eng",
   "link_main_page": "Главная",
   "link_about_page": "О сайте",
   "page_not_found": "Страница не найдена",
   "error_message": "Сообщение об ошибке",
   "reload_page": "Перезагрузить",
-  "throw_test_button": "Ошибка"
+  "throw_test_button": "Ошибка",
+  "localization_button_short": "Eng",
+  "localization_button_long": "English"
 }
