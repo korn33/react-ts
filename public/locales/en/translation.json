@@ -6,5 +6,6 @@
   "reload_page": "Reload",
   "throw_test_button": "Show error",
   "localization_button_short": "Рус",
-  "localization_button_long": "Русский"
+  "localization_button_long": "Русский",
+  "log_in_button": "Log in"
 }
