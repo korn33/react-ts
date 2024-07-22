@@ -7,7 +7,8 @@ interface ModalProps {
     className?: string,
     children?: ReactNode
     isOpen: boolean,
-    onClose: () => void
+    onClose: () => void,
+    lazy?: boolean
 }
 
 export const Modal = (props: ModalProps) => {
@@ -15,10 +16,12 @@ export const Modal = (props: ModalProps) => {
         className,
         isOpen,
         children,
-        onClose
+        onClose,
+        lazy
     } = props
 
     const [isClosing, setIsClosing] = useState(false)
+    const [isMount, setIsMount] = useState(false)
 
     const modes: Mods = {
         [cls.opened]: isOpen,
@@ -67,6 +70,16 @@ export const Modal = (props: ModalProps) => {
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation()
+    }
+
+    useEffect(() => {
+        if (isOpen && !isMount) {
+            setIsMount(true)
+        }
+    }, [isOpen]);
+
+    if (lazy && !isMount) {
+        return null;
     }
 
     return (

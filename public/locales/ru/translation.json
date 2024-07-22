@@ -7,5 +7,7 @@
   "throw_test_button": "Ошибка",
   "localization_button_short": "Eng",
   "localization_button_long": "English",
-  "log_in_button": "Войти"
+  "log_in_button": "Войти",
+  "loginForm_login_input_placeholder": "логин",
+  "loginForm_password_input_placeholder": "пароль"
 }

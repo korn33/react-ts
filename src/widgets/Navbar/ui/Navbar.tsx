@@ -1,9 +1,9 @@
 import React, {useCallback, useState} from 'react';
 import {classNames} from "shared/lib/classNames";
 import cls from './Navbar.module.scss'
-import {Modal} from "shared/ui/Modal/Modal";
 import {AppButton, ThemeButtonApp} from "shared/ui/AppButton/AppButton";
 import {useTranslation} from "react-i18next";
+import {LoginModal} from "features/AuthByUsername";
 
 interface NavbarProps {
     className?: string
@@ -14,26 +14,28 @@ export const Navbar = ({className}: NavbarProps) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const toggleModal = () => {
-        setIsOpen(prevState => !prevState)
+    const openModal = () => {
+        setIsOpen(true)
     }
 
-    const toggleModalCallback = useCallback(toggleModal, [isOpen])
+    const openModalCallback = useCallback(openModal, [isOpen])
+
+    const closeModal = () => {
+        setIsOpen(false)
+    }
+
+    const closeModalCallback = useCallback(closeModal, [isOpen])
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <AppButton
                 theme={ThemeButtonApp.CLEAR_INVERTED}
-                onClick={toggleModal}
+                onClick={openModalCallback}
                 className={cls.links}
             >
                 {t('log_in_button')}
             </AppButton>
-            <Modal isOpen={isOpen} onClose={toggleModalCallback}>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci at corporis delectus eveniet magni omnis optio possimus quas ut!
-                </p>
-            </Modal>
+            <LoginModal isOpen={isOpen} onClose={closeModalCallback}/>
         </div>
     );
 };
