@@ -28,15 +28,18 @@ export const AppButton: FC<AppButtonProps> = (props: AppButtonProps) => {
         theme,
         square,
         size = ButtonSize.M,
+        disabled,
         ...otherProps} = props
 
     const mods: Mods = {
-        [cls.square]: square
+        [cls.square]: square,
+        [cls.disabled]: disabled
     }
 
     return (
         <button
             className={classNames(cls.AppButton, mods, [className, cls[theme], cls[size]])}
+            disabled={disabled}
             {...otherProps}
         >
             {children}

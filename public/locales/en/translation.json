@@ -9,5 +9,8 @@
   "localization_button_long": "Русский",
   "log_in_button": "Log in",
   "loginForm_login_input_placeholder": "username",
-  "loginForm_password_input_placeholder": "password"
+  "loginForm_password_input_placeholder": "password",
+  "error_login_message": "Incorrect login or password",
+  "login_title": "Login form",
+  "log_out_button": "Log out"
 }
