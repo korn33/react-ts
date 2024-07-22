@@ -76,6 +76,9 @@ export const Modal = (props: ModalProps) => {
         if (isOpen && !isMount) {
             setIsMount(true)
         }
+        return () => {
+            setIsMount(false)
+        }
     }, [isOpen]);
 
     if (lazy && !isMount) {
