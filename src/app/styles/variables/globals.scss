@@ -9,9 +9,22 @@
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-name);
 
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-name);
+
   //размеры
   --navbar-height: 50px;
 
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
+
+  //z-indexes
+  --modal-z-index: 10;
+
+  //colors
+  --overlay-color: rgba(0, 0, 0, 0.6);
+
+  --attention-color: #ff6200;
+  --second-attention-color: #9d4006
 }

@@ -1,9 +1,16 @@
 {
-  "localization_button": "рус",
   "link_main_page": "Main",
   "link_about_page": "About",
   "page_not_found": "Page not found",
   "error_message": "Something went wrong",
   "reload_page": "Reload",
-  "throw_test_button": "Show error"
+  "throw_test_button": "Show error",
+  "localization_button_short": "Рус",
+  "localization_button_long": "Русский",
+  "log_in_button": "Log in",
+  "loginForm_login_input_placeholder": "username",
+  "loginForm_password_input_placeholder": "password",
+  "error_login_message": "Incorrect login or password",
+  "login_title": "Login form",
+  "log_out_button": "Log out"
 }

@@ -1,9 +1,16 @@
 {
-  "localization_button": "eng",
   "link_main_page": "Главная",
   "link_about_page": "О сайте",
   "page_not_found": "Страница не найдена",
   "error_message": "Сообщение об ошибке",
   "reload_page": "Перезагрузить",
-  "throw_test_button": "Ошибка"
+  "throw_test_button": "Ошибка",
+  "localization_button_short": "Eng",
+  "localization_button_long": "English",
+  "log_in_button": "Войти",
+  "loginForm_login_input_placeholder": "логин",
+  "loginForm_password_input_placeholder": "пароль",
+  "error_login_message": "Неверный логин или пароль",
+  "login_title": "Форма авторизации",
+  "log_out_button": "Выйти"
 }

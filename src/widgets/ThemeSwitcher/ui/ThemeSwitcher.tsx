@@ -1,4 +1,4 @@
-import {classNames} from "shared/lib/classNames";
+import {classNames, Mods} from "shared/lib/classNames";
 import cls from './ThemeSwitcher.module.scss'
 import React from "react";
 import {Theme, useTheme} from "app/providers/ThemeProvider";
@@ -7,14 +7,24 @@ import DarkIconTheme from "assets/icons/theme-dark.svg";
 import {AppButton, ThemeButtonApp} from "shared/ui/AppButton/AppButton";
 
 interface ThemeSwitcherProps {
-    className?: string
+    className?: string,
+    sidebarCollapsed: boolean
 }
 
-export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
+export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+    const {
+        className,
+        sidebarCollapsed
+    } = props
+
     const {theme, toggleTheme} = useTheme()
 
+    const mods: Mods = {
+        [cls.sidebarCollapsed]: sidebarCollapsed
+    }
+
     return (
-        <div className={classNames(cls.ThemeSwitcher, {}, [className])}>
+        <div className={classNames(cls.ThemeSwitcher, mods, [className])}>
             <AppButton
                 theme={ThemeButtonApp.CLEAR}
                 onClick={toggleTheme}>{
