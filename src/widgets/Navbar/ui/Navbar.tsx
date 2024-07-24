@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {classNames} from "shared/lib/classNames";
 import cls from './Navbar.module.scss'
 import {AppButton, ThemeButtonApp} from "shared/ui/AppButton/AppButton";
@@ -22,6 +22,12 @@ export const Navbar = ({className}: NavbarProps) => {
     const openModal = () => {
         setIsOpen(true)
     }
+
+    useEffect(() => {
+        if (isOpen && userData)  {
+            closeModal()
+        }
+    }, [isOpen, userData])
 
     const openModalCallback = useCallback(openModal, [isOpen])
 
@@ -58,7 +64,9 @@ export const Navbar = ({className}: NavbarProps) => {
                 >
                     {t('log_in_button')}
                 </AppButton>
-                <LoginModal isOpen={isOpen} onClose={closeModalCallback}/>
+                {
+                    isOpen && <LoginModal isOpen={isOpen} onClose={closeModalCallback}/>
+                }
             </div>
         );
     }
