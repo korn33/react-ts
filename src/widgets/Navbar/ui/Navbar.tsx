@@ -23,11 +23,12 @@ export const Navbar = ({className}: NavbarProps) => {
         setIsOpen(true)
     }
 
-    useEffect(() => {
-        if (isOpen && userData)  {
-            closeModal()
-        }
-    }, [isOpen, userData])
+    // закрытие окна без учета результата запроса
+    // useEffect(() => {
+    //     if (isOpen && userData)  {
+    //         closeModal()
+    //     }
+    // }, [isOpen, userData])
 
     const openModalCallback = useCallback(openModal, [isOpen])
 
