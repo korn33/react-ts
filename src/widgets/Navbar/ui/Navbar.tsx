@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import {classNames} from "shared/lib/classNames";
 import cls from './Navbar.module.scss'
 import {AppButton, ThemeButtonApp} from "shared/ui/AppButton/AppButton";
@@ -11,7 +11,7 @@ interface NavbarProps {
     className?: string
 }
 
-export const Navbar = ({className}: NavbarProps) => {
+export const Navbar = memo(({className}: NavbarProps) => {
     const {t} = useTranslation()
 
     const [isOpen, setIsOpen] = useState(false)
@@ -71,4 +71,4 @@ export const Navbar = ({className}: NavbarProps) => {
             </div>
         );
     }
-};
+});

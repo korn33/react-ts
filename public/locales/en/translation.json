@@ -12,5 +12,6 @@
   "loginForm_password_input_placeholder": "password",
   "error_login_message": "Incorrect login or password",
   "login_title": "Login form",
-  "log_out_button": "Log out"
+  "log_out_button": "Log out",
+  "link_profile_page": "Profile"
 }

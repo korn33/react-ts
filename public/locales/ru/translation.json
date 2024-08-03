@@ -12,5 +12,6 @@
   "loginForm_password_input_placeholder": "пароль",
   "error_login_message": "Неверный логин или пароль",
   "login_title": "Форма авторизации",
-  "log_out_button": "Выйти"
+  "log_out_button": "Выйти",
+  "link_profile_page": "Профиль"
 }
