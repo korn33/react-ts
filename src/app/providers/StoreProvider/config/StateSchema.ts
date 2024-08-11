@@ -5,6 +5,7 @@ import {EnhancedStore, PayloadAction, Reducer, ReducersMapObject} from "@reduxjs
 import {CombinedState} from "redux";
 import {createReduxStore} from "app/providers/StoreProvider";
 import {ProfileSchema} from "entities/Profile";
+import {AxiosInstance} from "axios";
 
 export interface StateSchema{
     counter: CounterSchema,
@@ -29,3 +30,12 @@ export interface ReduxStoreWithManager extends  EnhancedStore<StateSchema> {
 }
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+
+interface ThunkExtraArgs {
+    api: AxiosInstance
+}
+
+export interface ThunkApiConfig<TErrorType> {
+    extra: ThunkExtraArgs,
+    rejectValue: TErrorType
+}

@@ -3,6 +3,7 @@ import {StateSchema} from "./StateSchema";
 import {counterReducer} from "entities/Counter";
 import {userReducer} from "entities/User";
 import {createReducerManager} from "./reducerManager";
+import {$api} from "shared/api/api";
 
 export function createReduxStore(initialState: StateSchema){
     const rootReducer: ReducersMapObject<StateSchema> = {
@@ -12,10 +13,17 @@ export function createReduxStore(initialState: StateSchema){
 
     const reducerManager = createReducerManager(rootReducer);
 
-    const store = configureStore<StateSchema>({
+    const store = configureStore({
         reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
-        preloadedState: initialState
+        preloadedState: initialState,
+        middleware: getDefaultMiddleware => getDefaultMiddleware({
+            thunk: {
+                extraArgument: {
+                    api: $api
+                }
+            }
+        })
     })
 
     //@ts-ignore

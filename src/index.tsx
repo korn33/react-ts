@@ -7,14 +7,14 @@ import {ErrorBoundary} from "app/providers/ErrorProvider";
 import {StoreProvider} from "app/providers/StoreProvider";
 
 render(
-    <StoreProvider>
-        <ErrorBoundary>
-            <BrowserRouter>
+    <ErrorBoundary>
+        <BrowserRouter>
+            <StoreProvider>
                 <ThemeProvider>
                     <App/>
                 </ThemeProvider>
-            </BrowserRouter>
-        </ErrorBoundary>
-    </StoreProvider>,
+            </StoreProvider>
+        </BrowserRouter>
+    </ErrorBoundary>,
     document.getElementById('root')
 )
